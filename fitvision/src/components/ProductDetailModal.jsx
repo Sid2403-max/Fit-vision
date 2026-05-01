@@ -123,6 +123,52 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
               </div>
             </div>
 
+            {/* Competitor Price Check Widget */}
+            <div style={{border: '1px solid #e0e0e0', borderRadius: '4px', padding: '15px', marginBottom: '16px', background: 'white'}}>
+              <div style={{fontWeight: 500, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px'}}>
+                <span style={{fontSize: '16px'}}>🔍 Web Price Check</span>
+                <span style={{fontSize: '11px', background: '#e0f2f1', color: '#00897b', padding: '2px 6px', borderRadius: '2px', fontWeight: 'bold', animation: 'pulse 2s infinite'}}>LIVE</span>
+              </div>
+              
+              <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
+                {/* FitVision (Current) */}
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px', background: '#f5fff6', border: '1px solid #c8e6c9', borderRadius: '4px'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+                    <div style={{width: '20px', height: '20px', background: '#2874f0', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>F</div>
+                    <span style={{fontWeight: 500}}>FitVision</span>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
+                    <span style={{fontWeight: 'bold', color: '#388e3c', fontSize: '16px'}}>₹{product.price}</span>
+                    <span style={{fontSize: '12px', color: 'white', background: '#388e3c', padding: '3px 8px', borderRadius: '12px', fontWeight: 'bold'}}>Best Deal</span>
+                  </div>
+                </div>
+
+                {/* Amazon Mock */}
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px', borderBottom: '1px solid #f0f0f0'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+                    <div style={{width: '20px', height: '20px', background: '#232f3e', color: '#ff9900', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>a</div>
+                    <span style={{color: '#878787'}}>Amazon</span>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
+                    <span style={{color: '#878787', fontSize: '15px'}}>₹{Math.floor(product.price * 1.25)}</span>
+                    <a href="#" onClick={(e) => e.preventDefault()} style={{fontSize: '12px', color: '#2874f0', textDecoration: 'none'}}>View</a>
+                  </div>
+                </div>
+
+                {/* Myntra Mock */}
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+                    <div style={{width: '20px', height: '20px', background: '#ff3f6c', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>M</div>
+                    <span style={{color: '#878787'}}>Myntra</span>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
+                    <span style={{color: '#878787', fontSize: '15px'}}>₹{Math.floor(product.price * 1.40)}</span>
+                    <a href="#" onClick={(e) => e.preventDefault()} style={{fontSize: '12px', color: '#2874f0', textDecoration: 'none'}}>View</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Action Buttons */}
             <div style={{display:'flex', gap:'10px', marginBottom:'20px'}}>
               <button className="btn btn-primary" style={{flex:1, padding:'14px'}} onClick={() => addToCart(product)}>
