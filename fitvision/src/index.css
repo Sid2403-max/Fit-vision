@@ -1,0 +1,148 @@
+:root {
+  /* Flipkart Color Palette */
+  --bg-primary: #f1f3f6; /* Flipkart background gray */
+  --bg-white: #ffffff;
+  
+  --nav-primary: #2874f0; /* Flipkart Blue Header */
+  
+  --text-primary: #212121;
+  --text-secondary: #878787;
+  --text-green: #388e3c; /* Discount text */
+  --text-link: #2874f0;
+  --text-white: #ffffff;
+  
+  --accent-primary: #ff9f00; /* Add to Cart Yellow */
+  --accent-secondary: #fb641b; /* Buy Now Orange */
+  
+  --border-color: #f0f0f0;
+  
+  /* Typography */
+  --font-sans: 'Roboto', Arial, sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--bg-white);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+}
+
+/* Flipkart Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  transition: box-shadow 0.2s;
+  color: white;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+}
+
+.btn-secondary {
+  background-color: var(--accent-secondary);
+}
+
+.btn-tryon {
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 100%;
+}
+
+.btn-tryon:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--bg-white);
+  border-radius: var(--radius-sm);
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
