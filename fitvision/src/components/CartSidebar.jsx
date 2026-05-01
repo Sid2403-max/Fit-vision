@@ -1,10 +1,34 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 export default function CartSidebar({ onClose, onCheckout }) {
   const { cart, removeFromCart } = useContext(AppContext);
+  const [testingCoupons, setTestingCoupons] = useState(false);
+  const [couponStatus, setCouponStatus] = useState('');
+  const [discount, setDiscount] = useState(0);
 
-  const total = cart.reduce((sum, item) => sum + (item.price || 0), 0);
+  const testCoupons = () => {
+    if (cart.length === 0 || discount > 0) return;
+    setTestingCoupons(true);
+    setCouponStatus('Finding coupons...');
+    
+    const codes = ['TESTING: SAVE10', 'TESTING: AXIS50', 'TESTING: FIT20', 'TESTING: FIRSTUSER', '✅ APPLIED: DEALMELA20'];
+    let i = 0;
+    
+    const interval = setInterval(() => {
+      setCouponStatus(codes[i]);
+      if (i === codes.length - 1) {
+        clearInterval(interval);
+        setTestingCoupons(false);
+        setDiscount(0.20); // 20% discount
+      }
+      i++;
+    }, 500);
+  };
+
+  const subTotal = cart.reduce((sum, item) => sum + (item.price || 0), 0);
+  const discountAmount = Math.floor(subTotal * discount);
+  const total = subTotal - discountAmount;
 
   return (
     <div className="sidebar-overlay" onClick={onClose}>
@@ -50,7 +74,36 @@ export default function CartSidebar({ onClose, onCheckout }) {
 
         {cart.length > 0 && (
           <div className="sidebar-footer">
-            <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '15px', fontSize: '18px', fontWeight: 500}}>
+            {/* Auto-Coupon UI */}
+            <div style={{background: '#f5f9ff', border: '1px dashed #2874f0', borderRadius: '4px', padding: '10px', marginBottom: '15px', textAlign: 'center'}}>
+              {discount > 0 ? (
+                <div style={{color: '#388e3c', fontWeight: 'bold', fontSize: '14px'}}>
+                  {couponStatus} <br/>
+                  <span style={{color: '#212121', fontWeight: 500, marginTop: '5px', display: 'inline-block'}}>You saved ₹{discountAmount}! 🎉</span>
+                </div>
+              ) : (
+                <button 
+                  className="btn btn-secondary" 
+                  style={{width: '100%', background: testingCoupons ? '#e0e0e0' : 'white', color: testingCoupons ? '#212121' : '#2874f0', border: testingCoupons ? 'none' : '1px solid #2874f0', transition: 'all 0.3s'}}
+                  onClick={testCoupons}
+                  disabled={testingCoupons}
+                >
+                  {testingCoupons ? couponStatus : '✨ Auto-Apply Best Coupon'}
+                </button>
+              )}
+            </div>
+
+            <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '14px', color: '#878787'}}>
+              <span>Subtotal</span>
+              <span>₹{subTotal}</span>
+            </div>
+            {discount > 0 && (
+              <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '14px', color: '#388e3c'}}>
+                <span>Discount Applied</span>
+                <span>-₹{discountAmount}</span>
+              </div>
+            )}
+            <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '15px', fontSize: '18px', fontWeight: 500, borderTop: '1px dashed #e0e0e0', paddingTop: '10px'}}>
               <span>Total Amount</span>
               <span>₹{total}</span>
             </div>

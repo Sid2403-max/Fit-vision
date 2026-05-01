@@ -60,6 +60,43 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
               <div style={{color:'#388e3c', fontSize:'14px', fontWeight:500}}>{product.discount} — Extra 10% off with Axis Bank Card</div>
             </div>
 
+            {/* AI Price Insights Graph */}
+            <div style={{background: '#fff9e6', border: '1px solid #ffebaf', borderRadius: '4px', padding: '15px', marginBottom: '16px'}}>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
+                <div style={{fontWeight: 600, fontSize: '14px', color: '#b17b00'}}>📈 AI Price Insights</div>
+                <div style={{fontSize: '12px', background: '#388e3c', color: 'white', padding: '2px 6px', borderRadius: '2px', fontWeight: 'bold'}}>Lowest in 90 Days!</div>
+              </div>
+              
+              <div style={{height: '80px', position: 'relative', marginTop: '15px'}}>
+                <svg viewBox="0 0 100 40" style={{width: '100%', height: '100%', overflow: 'visible'}}>
+                  <polyline 
+                    fill="none" 
+                    stroke="#ff9f00" 
+                    strokeWidth="2" 
+                    points="0,10 20,12 40,8 60,15 80,10 100,35" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                  />
+                  <circle cx="0" cy="10" r="1.5" fill="#ff9f00" />
+                  <circle cx="20" cy="12" r="1.5" fill="#ff9f00" />
+                  <circle cx="40" cy="8" r="1.5" fill="#ff9f00" />
+                  <circle cx="60" cy="15" r="1.5" fill="#ff9f00" />
+                  <circle cx="80" cy="10" r="1.5" fill="#ff9f00" />
+                  <circle cx="100" cy="35" r="2.5" fill="#388e3c" />
+                  
+                  {/* Fake Price Labels */}
+                  <text x="0" y="5" fontSize="4" fill="#878787">₹{Math.floor(product.price * 1.5)}</text>
+                  <text x="85" y="28" fontSize="4" fill="#388e3c" fontWeight="bold">₹{product.price}</text>
+                  
+                  {/* Grid lines */}
+                  <line x1="0" y1="35" x2="100" y2="35" stroke="#e0e0e0" strokeWidth="0.5" strokeDasharray="1 1" />
+                </svg>
+              </div>
+              <div style={{fontSize: '12px', color: '#878787', marginTop: '5px', textAlign: 'center'}}>
+                Price dropped by 33% due to <b>Deal Mela</b>
+              </div>
+            </div>
+
             {/* Size Selection */}
             <div style={{marginBottom:'16px'}}>
               <div style={{fontWeight:500, marginBottom:'8px'}}>Select Size</div>
