@@ -156,13 +156,6 @@ const products = [
 
 
 
-
-  const product = products.find(p => p.id === parseInt(req.params.id));
-  product ? res.json(product) : res.status(404).json({ message: 'Product not found' });
-});
-
-
-
-module.exports = (req, res) => {
+export default function handler(req, res) {
   res.status(200).json(products);
-};
+}

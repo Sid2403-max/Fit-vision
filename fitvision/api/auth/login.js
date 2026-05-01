@@ -1,5 +1,5 @@
 
-module.exports = (req, res) => {
+export default function handler(req, res) {
   if (req.method === 'POST') {
     const { email, password } = req.body || {};
     if (email === 'test@fitvision.com' && password === 'password123') {
@@ -14,4 +14,4 @@ module.exports = (req, res) => {
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
   }
-};
+}

@@ -156,14 +156,7 @@ const products = [
 
 
 
-
-  const product = products.find(p => p.id === parseInt(req.params.id));
-  product ? res.json(product) : res.status(404).json({ message: 'Product not found' });
-});
-
-
-
-module.exports = (req, res) => {
+export default function handler(req, res) {
   const { id } = req.query;
   const product = products.find(p => p.id === parseInt(id));
   if (product) {
@@ -171,4 +164,4 @@ module.exports = (req, res) => {
   } else {
     res.status(404).json({ message: 'Product not found' });
   }
-};
+}
