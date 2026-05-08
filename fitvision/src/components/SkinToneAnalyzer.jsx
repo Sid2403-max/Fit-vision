@@ -31,7 +31,7 @@ function classifyTone(r, g, b) {
 // Palette recommendations per undertone + tone
 const PALETTES = {
   Warm: {
-    best: ['#e65100','#f9a825','#558b2f','#c62828','#4e342e'],
+    best: ['var(--text-secondary)','#f9a825','#558b2f','#c62828','#4e342e'],
     bestNames: ['Rust Orange','Warm Yellow','Olive Green','Deep Red','Warm Brown'],
     avoid: ['#1a237e','#e91e63','#c0c0c0'],
     avoidNames: ['Cold Navy','Hot Pink','Silver'],

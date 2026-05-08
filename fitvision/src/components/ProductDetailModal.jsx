@@ -114,7 +114,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
             </div>
 
             {/* Offers */}
-            <div style={{background:'#f5f9ff', border:'1px solid #dbe9ff', borderRadius:'4px', padding:'14px', marginBottom:'16px'}}>
+            <div style={{background:'var(--bg-primary)', border:'1px solid var(--border-color)', borderRadius:'4px', padding:'14px', marginBottom:'16px'}}>
               <div style={{fontWeight:500, marginBottom:'8px'}}>Available Offers</div>
               <div style={{fontSize:'13px', display:'flex', flexDirection:'column', gap:'6px'}}>
                 <div>🏦 5% Cashback on Flipkart Axis Bank Card</div>
@@ -130,7 +130,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
                   <span style={{fontSize: '16px'}}>🏪 Seller Information</span>
                 </div>
                 {!isPremium && (
-                  <span style={{fontSize: '11px', background: '#ffe0b2', color: '#e65100', padding: '2px 6px', borderRadius: '2px', fontWeight: 'bold'}}>PREMIUM ONLY</span>
+                  <span style={{fontSize: '11px', background: 'var(--bg-primary)', color: 'var(--text-secondary)', padding: '2px 6px', borderRadius: '2px', fontWeight: 'bold'}}>PREMIUM ONLY</span>
                 )}
               </div>
 
@@ -180,12 +180,12 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
             <div style={{border: '1px solid #e0e0e0', borderRadius: '4px', padding: '15px', marginBottom: '16px', background: 'white'}}>
               <div style={{fontWeight: 500, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px'}}>
                 <span style={{fontSize: '16px'}}>🔍 Web Price Check</span>
-                <span style={{fontSize: '11px', background: '#e0f2f1', color: '#00897b', padding: '2px 6px', borderRadius: '2px', fontWeight: 'bold', animation: 'pulse 2s infinite'}}>LIVE</span>
+                <span style={{fontSize: '11px', background: 'var(--bg-primary)', color: 'var(--text-secondary)', padding: '2px 6px', borderRadius: '2px', fontWeight: 'bold', animation: 'pulse 2s infinite'}}>LIVE</span>
               </div>
               
               <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
                 {/* FitVision (Current) */}
-                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px', background: '#f5fff6', border: '1px solid #c8e6c9', borderRadius: '4px'}}>
+                <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px', background: 'var(--bg-primary)', border: '1px solid var(--border-color)', borderRadius: '4px'}}>
                   <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
                     <div style={{width: '20px', height: '20px', background: 'var(--nav-primary)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>F</div>
                     <span style={{fontWeight: 500}}>FitVision</span>
@@ -199,7 +199,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
                 {/* Amazon Mock */}
                 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px', borderBottom: '1px solid #f0f0f0'}}>
                   <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
-                    <div style={{width: '20px', height: '20px', background: '#232f3e', color: '#ff9900', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>a</div>
+                    <div style={{width: '20px', height: '20px', background: 'var(--text-primary)', color: 'var(--accent-primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>a</div>
                     <span style={{color: '#878787'}}>Amazon</span>
                   </div>
                   <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
@@ -211,7 +211,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
                 {/* Myntra Mock */}
                 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px'}}>
                   <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
-                    <div style={{width: '20px', height: '20px', background: '#ff3f6c', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>M</div>
+                    <div style={{width: '20px', height: '20px', background: 'var(--accent-primary)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>M</div>
                     <span style={{color: '#878787'}}>Myntra</span>
                   </div>
                   <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>

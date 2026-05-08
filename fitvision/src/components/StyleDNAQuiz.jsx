@@ -19,7 +19,7 @@ const ROUNDS = [
     question: 'What kind of fit feels like YOU?',
     emoji: '✂️',
     options: [
-      { id: 'tailored',  label: 'Fitted & Tailored',   icon: '👔', gradient: 'linear-gradient(135deg,#0d47a1,#1976d2)', desc: 'Sharp and structured' },
+      { id: 'tailored',  label: 'Fitted & Tailored',   icon: '👔', gradient: 'linear-gradient(135deg,#505646,#505646)', desc: 'Sharp and structured' },
       { id: 'flowy',     label: 'Flowy & Comfortable', icon: '🌊', gradient: 'linear-gradient(135deg,#006064,#00acc1)', desc: 'Relaxed and free' },
       { id: 'oversized', label: 'Oversized & Bold',     icon: '🧢', gradient: 'linear-gradient(135deg,#212121,#616161)', desc: 'Statement pieces' },
       { id: 'minimal',   label: 'Minimal & Classic',   icon: '⬜', gradient: 'linear-gradient(135deg,#37474f,#78909c)', desc: 'Clean lines, timeless' },

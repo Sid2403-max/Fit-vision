@@ -277,7 +277,7 @@ export default function VirtualTryOnModal({ item, onClose, onBuyNow }) {
             <div style={{ color: 'var(--text-green)', fontSize: '14px', fontWeight: 500, marginBottom: '16px' }}>{item.discount}</div>
 
             {capturedDataUrl && !aiAnalyzing && (
-              <div style={{ background: '#e8f5e9', border: '1px solid #c8e6c9', padding: '14px', borderRadius: '4px', marginBottom: '16px' }}>
+              <div style={{ background: 'var(--bg-primary)', border: '1px solid var(--border-color)', padding: '14px', borderRadius: '4px', marginBottom: '16px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                   <span>🤖</span>
                   <span style={{ fontWeight: 600, color: 'var(--text-green)' }}>

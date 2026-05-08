@@ -314,8 +314,8 @@
 }
 
 .fit-recommendation {
-  background: #e8f5e9;
-  border: 1px solid #c8e6c9;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
   padding: 16px;
   border-radius: 4px;
   margin-top: 20px;
@@ -717,7 +717,7 @@
 .stock-badge {
   display: inline-block;
   background: #fff3e0;
-  color: #e65100;
+  color: var(--text-secondary);
   font-size: 11px;
   font-weight: 600;
   padding: 2px 8px;
@@ -725,7 +725,7 @@
   border: 1px solid #ffcc80;
 }
 .delivery-countdown {
-  background: #e8f5e9;
+  background: var(--bg-primary);
   color: #2e7d32;
   font-size: 13px;
   padding: 8px 12px;

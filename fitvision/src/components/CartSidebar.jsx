@@ -75,7 +75,7 @@ export default function CartSidebar({ onClose, onCheckout }) {
         {cart.length > 0 && (
           <div className="sidebar-footer">
             {/* Auto-Coupon UI */}
-            <div style={{background: '#f5f9ff', border: '1px dashed var(--nav-primary)', borderRadius: '4px', padding: '10px', marginBottom: '15px', textAlign: 'center'}}>
+            <div style={{background: 'var(--bg-primary)', border: '1px dashed var(--nav-primary)', borderRadius: '4px', padding: '10px', marginBottom: '15px', textAlign: 'center'}}>
               {discount > 0 ? (
                 <div style={{color: 'var(--text-green)', fontWeight: 'bold', fontSize: '14px'}}>
                   {couponStatus} <br/>

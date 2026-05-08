@@ -26,7 +26,7 @@ function calcConfidence(size, height, weight, chest, waist) {
   return Math.round(score);
 }
 
-const COLORS = { XS:'#9c27b0', S:'#2196f3', M:'#4caf50', L:'#ff9800', XL:'#f44336', XXL:'#795548' };
+const COLORS = { XS:'#9c27b0', S:'#505646', M:'#4caf50', L:'#ff9800', XL:'#f44336', XXL:'#795548' };
 
 export default function SizePredictorModal({ onClose, product }) {
   const [form, setForm] = useState({ height: '', weight: '', chest: '', waist: '' });
