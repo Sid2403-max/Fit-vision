@@ -69,8 +69,8 @@ export default function Storefront({ onTryOn, onViewDetail, onSizePredict, onSty
           ) : (
             <>
               <div style={{fontSize:'3rem', marginBottom:'12px'}}>🧬</div>
-              <h2 style={{fontSize:'28px', fontWeight:800, marginBottom:'8px', background:'linear-gradient(135deg,#64b5f6,#ce93d8,#ffb74d)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent'}}>Discover Your Style DNA</h2>
-              <p style={{color:'rgba(255,255,255,0.65)', marginBottom:'20px', maxWidth:'360px', lineHeight:1.6}}>Take our 60-second visual quiz and unlock your unique fashion archetype with personalised product recommendations.</p>
+              <h2 style={{fontSize:'28px', fontWeight:800, marginBottom:'8px', color:'var(--accent-primary)'}}>Discover Your Style DNA</h2>
+              <p style={{color:'var(--bg-primary)', marginBottom:'20px', maxWidth:'360px', lineHeight:1.6}}>Take our 60-second visual quiz and unlock your unique fashion archetype with personalised product recommendations.</p>
               <button className="btn btn-secondary" style={{padding:'12px 32px', fontSize:'15px'}} onClick={onStyleDNA}>
                 ✨ Start Style DNA Quiz
               </button>
