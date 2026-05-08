@@ -123,6 +123,28 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
               </div>
             </div>
 
+            {/* Shop Details */}
+            <div style={{border: '1px solid #e0e0e0', borderRadius: '4px', padding: '15px', marginBottom: '16px', background: 'white'}}>
+              <div style={{fontWeight: 500, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px'}}>
+                <span style={{fontSize: '16px'}}>🏪 Seller Information</span>
+              </div>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px', color: '#424242'}}>
+                <div style={{display: 'flex', alignItems: 'flex-start', gap: '8px'}}>
+                  <span style={{fontSize: '16px'}}>📍</span>
+                  <div>
+                    <span style={{fontWeight: 500}}>Address:</span><br/>
+                    {product.shopAddress || '123 Fashion Street, New Delhi, India'}
+                  </div>
+                </div>
+                <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+                  <span style={{fontSize: '16px'}}>📞</span>
+                  <div>
+                    <span style={{fontWeight: 500}}>Contact:</span> {product.shopContact || '+91 98765 43210'}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Competitor Price Check Widget */}
             <div style={{border: '1px solid #e0e0e0', borderRadius: '4px', padding: '15px', marginBottom: '16px', background: 'white'}}>
               <div style={{fontWeight: 500, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px'}}>

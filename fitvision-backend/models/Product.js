@@ -8,7 +8,9 @@ const productSchema = new mongoose.Schema({
   icon: { type: String, required: true },
   rating: { type: Number, default: 4.0 },
   reviews: { type: Number, default: 0 },
-  category: { type: String, default: 'Fashion' }
+  category: { type: String, default: 'Fashion' },
+  shopAddress: { type: String, default: '123 Fashion Street, New Delhi, India' },
+  shopContact: { type: String, default: '+91 98765 43210' }
 }, { timestamps: true });
 
 const Product = mongoose.model('Product', productSchema);
