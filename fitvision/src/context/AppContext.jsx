@@ -7,6 +7,7 @@ export function AppProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isPremium, setIsPremium] = useState(false);
 
   // Load from local storage on mount
   useEffect(() => {
@@ -16,6 +17,8 @@ export function AppProvider({ children }) {
     if (savedCart) setCart(JSON.parse(savedCart));
     const savedWishlist = localStorage.getItem('fitvision_wishlist');
     if (savedWishlist) setWishlist(JSON.parse(savedWishlist));
+    const savedPremium = localStorage.getItem('fitvision_premium');
+    if (savedPremium) setIsPremium(JSON.parse(savedPremium));
   }, []);
 
   const login = (userData) => {
@@ -60,8 +63,16 @@ export function AppProvider({ children }) {
 
   const isWishlisted = (productId) => wishlist.some(p => p.id === productId);
 
+  const togglePremium = () => {
+    setIsPremium((prev) => {
+      const newState = !prev;
+      localStorage.setItem('fitvision_premium', JSON.stringify(newState));
+      return newState;
+    });
+  };
+
   return (
-    <AppContext.Provider value={{ user, login, logout, cart, addToCart, removeFromCart, clearCart, wishlist, toggleWishlist, isWishlisted, searchQuery, setSearchQuery }}>
+    <AppContext.Provider value={{ user, login, logout, cart, addToCart, removeFromCart, clearCart, wishlist, toggleWishlist, isWishlisted, searchQuery, setSearchQuery, isPremium, togglePremium }}>
       {children}
     </AppContext.Provider>
   );

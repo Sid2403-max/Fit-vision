@@ -11,7 +11,7 @@ const REVIEWS = [
 const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
 export default function ProductDetailModal({ product, onClose, onTryOn }) {
-  const { addToCart, toggleWishlist, isWishlisted } = useContext(AppContext);
+  const { addToCart, toggleWishlist, isWishlisted, isPremium, togglePremium } = useContext(AppContext);
   const wishlisted = isWishlisted(product.id);
 
   const stars = (rating) => '★'.repeat(Math.round(rating)) + '☆'.repeat(5 - Math.round(rating));
@@ -123,12 +123,23 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
               </div>
             </div>
 
-            {/* Shop Details */}
-            <div style={{border: '1px solid #e0e0e0', borderRadius: '4px', padding: '15px', marginBottom: '16px', background: 'white'}}>
-              <div style={{fontWeight: 500, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px'}}>
-                <span style={{fontSize: '16px'}}>🏪 Seller Information</span>
+            {/* Shop Details - Premium Feature */}
+            <div style={{border: '1px solid #e0e0e0', borderRadius: '4px', padding: '15px', marginBottom: '16px', background: 'white', position: 'relative', overflow: 'hidden'}}>
+              <div style={{fontWeight: 500, marginBottom: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+                <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+                  <span style={{fontSize: '16px'}}>🏪 Seller Information</span>
+                </div>
+                {!isPremium && (
+                  <span style={{fontSize: '11px', background: '#ffe0b2', color: '#e65100', padding: '2px 6px', borderRadius: '2px', fontWeight: 'bold'}}>PREMIUM ONLY</span>
+                )}
               </div>
-              <div style={{display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px', color: '#424242'}}>
+
+              <div style={{
+                display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px', color: '#424242',
+                filter: isPremium ? 'none' : 'blur(4px)',
+                userSelect: isPremium ? 'auto' : 'none',
+                opacity: isPremium ? 1 : 0.6
+              }}>
                 <div style={{display: 'flex', alignItems: 'flex-start', gap: '8px'}}>
                   <span style={{fontSize: '16px'}}>📍</span>
                   <div>
@@ -143,6 +154,26 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
                   </div>
                 </div>
               </div>
+
+              {!isPremium && (
+                <div style={{
+                  position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                  background: 'rgba(255, 255, 255, 0.4)', zIndex: 10
+                }}>
+                  <div style={{fontSize: '24px', marginBottom: '8px'}}>🔒</div>
+                  <button 
+                    onClick={togglePremium}
+                    style={{
+                      background: 'linear-gradient(90deg, #ff8f00, #ffb300)', color: 'white', border: 'none',
+                      padding: '8px 16px', borderRadius: '20px', fontWeight: 'bold', cursor: 'pointer',
+                      boxShadow: '0 2px 4px rgba(0,0,0,0.2)', fontSize: '13px'
+                    }}
+                  >
+                    Unlock Premium to View
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Competitor Price Check Widget */}
