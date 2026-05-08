@@ -269,18 +269,18 @@ export default function VirtualTryOnModal({ item, onClose, onBuyNow }) {
 
             <h1 style={{ fontSize: '17px', fontWeight: 400, lineHeight: 1.4, marginBottom: '10px' }}>{item.name}</h1>
             <div style={{ marginBottom: '10px' }}>
-              <span style={{ background: '#388e3c', color: 'white', padding: '2px 6px', borderRadius: '3px', fontSize: '12px', fontWeight: 'bold', marginRight: '8px' }}>4.2 ★</span>
+              <span style={{ background: 'var(--text-green)', color: 'white', padding: '2px 6px', borderRadius: '3px', fontSize: '12px', fontWeight: 'bold', marginRight: '8px' }}>4.2 ★</span>
               <span style={{ color: '#878787', fontSize: '13px' }}>1,245 Ratings & 120 Reviews</span>
             </div>
 
             <div style={{ fontSize: '26px', fontWeight: 500, marginBottom: '4px' }}>₹{item.price}</div>
-            <div style={{ color: '#388e3c', fontSize: '14px', fontWeight: 500, marginBottom: '16px' }}>{item.discount}</div>
+            <div style={{ color: 'var(--text-green)', fontSize: '14px', fontWeight: 500, marginBottom: '16px' }}>{item.discount}</div>
 
             {capturedDataUrl && !aiAnalyzing && (
               <div style={{ background: '#e8f5e9', border: '1px solid #c8e6c9', padding: '14px', borderRadius: '4px', marginBottom: '16px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                   <span>🤖</span>
-                  <span style={{ fontWeight: 600, color: '#388e3c' }}>
+                  <span style={{ fontWeight: 600, color: 'var(--text-green)' }}>
                     {aiResult === 'success' ? 'AI Fit Mapped to Your Body' : 'Fit Preview Generated'}
                   </span>
                 </div>
@@ -303,7 +303,7 @@ export default function VirtualTryOnModal({ item, onClose, onBuyNow }) {
             <div className="action-buttons-modal">
               <button
                 className="btn btn-primary"
-                style={{ flex: 1, backgroundColor: added ? '#388e3c' : 'var(--accent-primary)' }}
+                style={{ flex: 1, backgroundColor: added ? 'var(--text-green)' : 'var(--accent-primary)' }}
                 onClick={handleAddToCart}
               >
                 {added ? 'ADDED ✓' : 'ADD TO CART'}

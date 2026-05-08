@@ -75,16 +75,16 @@ export default function CartSidebar({ onClose, onCheckout }) {
         {cart.length > 0 && (
           <div className="sidebar-footer">
             {/* Auto-Coupon UI */}
-            <div style={{background: '#f5f9ff', border: '1px dashed #2874f0', borderRadius: '4px', padding: '10px', marginBottom: '15px', textAlign: 'center'}}>
+            <div style={{background: '#f5f9ff', border: '1px dashed var(--nav-primary)', borderRadius: '4px', padding: '10px', marginBottom: '15px', textAlign: 'center'}}>
               {discount > 0 ? (
-                <div style={{color: '#388e3c', fontWeight: 'bold', fontSize: '14px'}}>
+                <div style={{color: 'var(--text-green)', fontWeight: 'bold', fontSize: '14px'}}>
                   {couponStatus} <br/>
                   <span style={{color: '#212121', fontWeight: 500, marginTop: '5px', display: 'inline-block'}}>You saved ₹{discountAmount}! 🎉</span>
                 </div>
               ) : (
                 <button 
                   className="btn btn-secondary" 
-                  style={{width: '100%', background: testingCoupons ? '#e0e0e0' : 'white', color: testingCoupons ? '#212121' : '#2874f0', border: testingCoupons ? 'none' : '1px solid #2874f0', transition: 'all 0.3s'}}
+                  style={{width: '100%', background: testingCoupons ? '#e0e0e0' : 'white', color: testingCoupons ? '#212121' : 'var(--nav-primary)', border: testingCoupons ? 'none' : '1px solid var(--nav-primary)', transition: 'all 0.3s'}}
                   onClick={testCoupons}
                   disabled={testingCoupons}
                 >
@@ -98,7 +98,7 @@ export default function CartSidebar({ onClose, onCheckout }) {
               <span>₹{subTotal}</span>
             </div>
             {discount > 0 && (
-              <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '14px', color: '#388e3c'}}>
+              <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '8px', fontSize: '14px', color: 'var(--text-green)'}}>
                 <span>Discount Applied</span>
                 <span>-₹{discountAmount}</span>
               </div>

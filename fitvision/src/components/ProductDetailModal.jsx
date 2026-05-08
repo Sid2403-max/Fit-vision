@@ -29,7 +29,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
             </div>
             <div style={{display:'flex', gap:'8px', marginTop:'8px'}}>
               {[product.image, product.image, product.image].map((img, i) => (
-                <div key={i} style={{width:'60px', height:'60px', border:'2px solid ' + (i===0 ? '#2874f0' : '#e0e0e0'), borderRadius:'4px', overflow:'hidden', cursor:'pointer'}}>
+                <div key={i} style={{width:'60px', height:'60px', border:'2px solid ' + (i===0 ? 'var(--nav-primary)' : '#e0e0e0'), borderRadius:'4px', overflow:'hidden', cursor:'pointer'}}>
                   <img src={img} alt="" style={{width:'100%', height:'100%', objectFit:'cover'}} />
                 </div>
               ))}
@@ -49,7 +49,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
             </div>
 
             <div style={{display:'flex', alignItems:'center', gap:'10px', margin:'10px 0'}}>
-              <span style={{background:'#388e3c', color:'white', padding:'3px 8px', borderRadius:'3px', fontSize:'13px', fontWeight:'bold'}}>{product.rating} ★</span>
+              <span style={{background:'var(--text-green)', color:'white', padding:'3px 8px', borderRadius:'3px', fontSize:'13px', fontWeight:'bold'}}>{product.rating} ★</span>
               <span style={{color:'#878787', fontSize:'13px'}}>{product.reviews?.toLocaleString()} Ratings</span>
               <span style={{color:'#878787'}}>|</span>
               <span style={{color:'#878787', fontSize:'13px'}}>Flipkart Assured ✅</span>
@@ -57,36 +57,36 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
 
             <div style={{borderTop:'1px solid #f0f0f0', borderBottom:'1px solid #f0f0f0', padding:'14px 0', margin:'12px 0'}}>
               <div style={{fontSize:'28px', fontWeight:500}}>₹{product.price}</div>
-              <div style={{color:'#388e3c', fontSize:'14px', fontWeight:500}}>{product.discount} — Extra 10% off with Axis Bank Card</div>
+              <div style={{color:'var(--text-green)', fontSize:'14px', fontWeight:500}}>{product.discount} — Extra 10% off with Axis Bank Card</div>
             </div>
 
             {/* AI Price Insights Graph */}
             <div style={{background: '#fff9e6', border: '1px solid #ffebaf', borderRadius: '4px', padding: '15px', marginBottom: '16px'}}>
               <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
                 <div style={{fontWeight: 600, fontSize: '14px', color: '#b17b00'}}>📈 AI Price Insights</div>
-                <div style={{fontSize: '12px', background: '#388e3c', color: 'white', padding: '2px 6px', borderRadius: '2px', fontWeight: 'bold'}}>Lowest in 90 Days!</div>
+                <div style={{fontSize: '12px', background: 'var(--text-green)', color: 'white', padding: '2px 6px', borderRadius: '2px', fontWeight: 'bold'}}>Lowest in 90 Days!</div>
               </div>
               
               <div style={{height: '80px', position: 'relative', marginTop: '15px'}}>
                 <svg viewBox="0 0 100 40" style={{width: '100%', height: '100%', overflow: 'visible'}}>
                   <polyline 
                     fill="none" 
-                    stroke="#ff9f00" 
+                    stroke="var(--accent-primary)" 
                     strokeWidth="2" 
                     points="0,10 20,12 40,8 60,15 80,10 100,35" 
                     strokeLinecap="round" 
                     strokeLinejoin="round" 
                   />
-                  <circle cx="0" cy="10" r="1.5" fill="#ff9f00" />
-                  <circle cx="20" cy="12" r="1.5" fill="#ff9f00" />
-                  <circle cx="40" cy="8" r="1.5" fill="#ff9f00" />
-                  <circle cx="60" cy="15" r="1.5" fill="#ff9f00" />
-                  <circle cx="80" cy="10" r="1.5" fill="#ff9f00" />
-                  <circle cx="100" cy="35" r="2.5" fill="#388e3c" />
+                  <circle cx="0" cy="10" r="1.5" fill="var(--accent-primary)" />
+                  <circle cx="20" cy="12" r="1.5" fill="var(--accent-primary)" />
+                  <circle cx="40" cy="8" r="1.5" fill="var(--accent-primary)" />
+                  <circle cx="60" cy="15" r="1.5" fill="var(--accent-primary)" />
+                  <circle cx="80" cy="10" r="1.5" fill="var(--accent-primary)" />
+                  <circle cx="100" cy="35" r="2.5" fill="var(--text-green)" />
                   
                   {/* Fake Price Labels */}
                   <text x="0" y="5" fontSize="4" fill="#878787">₹{Math.floor(product.price * 1.5)}</text>
-                  <text x="85" y="28" fontSize="4" fill="#388e3c" fontWeight="bold">₹{product.price}</text>
+                  <text x="85" y="28" fontSize="4" fill="var(--text-green)" fontWeight="bold">₹{product.price}</text>
                   
                   {/* Grid lines */}
                   <line x1="0" y1="35" x2="100" y2="35" stroke="#e0e0e0" strokeWidth="0.5" strokeDasharray="1 1" />
@@ -104,13 +104,13 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
                 {SIZES.map(size => (
                   <button key={size} style={{
                     padding:'8px 14px', border:'1px solid #e0e0e0', borderRadius:'2px',
-                    background: size === 'M' ? '#2874f0' : 'white',
+                    background: size === 'M' ? 'var(--nav-primary)' : 'white',
                     color: size === 'M' ? 'white' : '#212121',
                     fontWeight: size === 'M' ? '600' : '400', cursor:'pointer'
                   }}>{size}</button>
                 ))}
               </div>
-              <div style={{fontSize:'12px', color:'#2874f0', marginTop:'8px', cursor:'pointer'}}>Size Chart &gt;</div>
+              <div style={{fontSize:'12px', color:'var(--nav-primary)', marginTop:'8px', cursor:'pointer'}}>Size Chart &gt;</div>
             </div>
 
             {/* Offers */}
@@ -165,7 +165,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
                   <button 
                     onClick={togglePremium}
                     style={{
-                      background: 'linear-gradient(90deg, #ff8f00, #ffb300)', color: 'white', border: 'none',
+                      background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-primary))', color: 'white', border: 'none',
                       padding: '8px 16px', borderRadius: '20px', fontWeight: 'bold', cursor: 'pointer',
                       boxShadow: '0 2px 4px rgba(0,0,0,0.2)', fontSize: '13px'
                     }}
@@ -187,12 +187,12 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
                 {/* FitVision (Current) */}
                 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px', background: '#f5fff6', border: '1px solid #c8e6c9', borderRadius: '4px'}}>
                   <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
-                    <div style={{width: '20px', height: '20px', background: '#2874f0', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>F</div>
+                    <div style={{width: '20px', height: '20px', background: 'var(--nav-primary)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 'bold'}}>F</div>
                     <span style={{fontWeight: 500}}>FitVision</span>
                   </div>
                   <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
-                    <span style={{fontWeight: 'bold', color: '#388e3c', fontSize: '16px'}}>₹{product.price}</span>
-                    <span style={{fontSize: '12px', color: 'white', background: '#388e3c', padding: '3px 8px', borderRadius: '12px', fontWeight: 'bold'}}>Best Deal</span>
+                    <span style={{fontWeight: 'bold', color: 'var(--text-green)', fontSize: '16px'}}>₹{product.price}</span>
+                    <span style={{fontSize: '12px', color: 'white', background: 'var(--text-green)', padding: '3px 8px', borderRadius: '12px', fontWeight: 'bold'}}>Best Deal</span>
                   </div>
                 </div>
 
@@ -204,7 +204,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
                   </div>
                   <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
                     <span style={{color: '#878787', fontSize: '15px'}}>₹{Math.floor(product.price * 1.25)}</span>
-                    <a href="#" onClick={(e) => e.preventDefault()} style={{fontSize: '12px', color: '#2874f0', textDecoration: 'none'}}>View</a>
+                    <a href="#" onClick={(e) => e.preventDefault()} style={{fontSize: '12px', color: 'var(--nav-primary)', textDecoration: 'none'}}>View</a>
                   </div>
                 </div>
 
@@ -216,7 +216,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
                   </div>
                   <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
                     <span style={{color: '#878787', fontSize: '15px'}}>₹{Math.floor(product.price * 1.40)}</span>
-                    <a href="#" onClick={(e) => e.preventDefault()} style={{fontSize: '12px', color: '#2874f0', textDecoration: 'none'}}>View</a>
+                    <a href="#" onClick={(e) => e.preventDefault()} style={{fontSize: '12px', color: 'var(--nav-primary)', textDecoration: 'none'}}>View</a>
                   </div>
                 </div>
               </div>
@@ -238,7 +238,7 @@ export default function ProductDetailModal({ product, onClose, onTryOn }) {
               {REVIEWS.map((r, i) => (
                 <div key={i} style={{borderBottom:'1px solid #f0f0f0', paddingBottom:'14px', marginBottom:'14px'}}>
                   <div style={{display:'flex', alignItems:'center', gap:'10px', marginBottom:'6px'}}>
-                    <span style={{background:'#388e3c', color:'white', padding:'2px 6px', borderRadius:'3px', fontSize:'12px'}}>{r.rating} ★</span>
+                    <span style={{background:'var(--text-green)', color:'white', padding:'2px 6px', borderRadius:'3px', fontSize:'12px'}}>{r.rating} ★</span>
                     <span style={{fontWeight:500, fontSize:'14px'}}>{r.user}</span>
                     <span style={{color:'#878787', fontSize:'12px'}}>{r.date}</span>
                   </div>

@@ -10,7 +10,7 @@ const ROUNDS = [
     options: [
       { id: 'work',      label: 'Work & Professional', icon: '💼', gradient: 'linear-gradient(135deg,#1a237e,#3949ab)', desc: 'Boardrooms & meetings' },
       { id: 'ethnic',    label: 'Festivals & Ethnic',  icon: '🪔', gradient: 'linear-gradient(135deg,#bf360c,#f57c00)', desc: 'Weddings & traditions' },
-      { id: 'casual',    label: 'Casual & Street',     icon: '🛹', gradient: 'linear-gradient(135deg,#1b5e20,#388e3c)', desc: 'Campus & outings' },
+      { id: 'casual',    label: 'Casual & Street',     icon: '🛹', gradient: 'linear-gradient(135deg,#1b5e20,var(--text-green))', desc: 'Campus & outings' },
       { id: 'party',     label: 'Date Nights & Parties',icon:'🥂', gradient: 'linear-gradient(135deg,#4a148c,#7b1fa2)', desc: 'Dinner & events' },
     ],
   },

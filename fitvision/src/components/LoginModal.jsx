@@ -79,7 +79,7 @@ export default function LoginModal({ onClose }) {
           </form>
 
           <div style={{textAlign: 'center', marginTop: '20px'}}>
-            <span style={{color: '#2874f0', fontWeight: 500, fontSize: '14px', cursor: 'pointer'}}>New to FitVision? Create an account</span>
+            <span style={{color: 'var(--nav-primary)', fontWeight: 500, fontSize: '14px', cursor: 'pointer'}}>New to FitVision? Create an account</span>
           </div>
         </div>
       </div>

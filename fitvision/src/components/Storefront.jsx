@@ -118,7 +118,7 @@ export default function Storefront({ onTryOn, onViewDetail, onSizePredict, onSty
               type="range" min="200" max="5000" step="100"
               value={priceRange}
               onChange={e => setPriceRange(Number(e.target.value))}
-              style={{width:'100%', accentColor:'#2874f0'}}
+              style={{width:'100%', accentColor:'var(--nav-primary)'}}
             />
             <div style={{display:'flex', justifyContent:'space-between', fontSize:'11px', color:'#878787'}}>
               <span>₹200</span><span>₹5000</span>

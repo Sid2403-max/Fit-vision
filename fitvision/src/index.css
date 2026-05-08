@@ -1,23 +1,25 @@
 :root {
-  /* Flipkart Color Palette */
-  --bg-primary: #fad996; /* Custom background color */
+  /* Bakery Cafe Color Palette */
+  --bg-primary: #F9F4ED; /* Light cream background */
+  --bg-secondary: #505646; /* Deep olive green */
   --bg-white: #ffffff;
   
-  --nav-primary: #2874f0; /* Flipkart Blue Header */
+  --nav-primary: #505646; /* Olive green header */
   
-  --text-primary: #212121;
-  --text-secondary: #878787;
-  --text-green: #388e3c; /* Discount text */
-  --text-link: #2874f0;
-  --text-white: #ffffff;
+  --text-primary: #2A2F25;
+  --text-secondary: #706B62;
+  --text-green: #505646;
+  --text-link: #505646;
+  --text-white: #F9F4ED;
   
-  --accent-primary: #ff9f00; /* Add to Cart Yellow */
-  --accent-secondary: #fb641b; /* Buy Now Orange */
+  --accent-primary: #D6C6B0; /* Sand/Tan */
+  --accent-secondary: #505646; /* Olive */
   
-  --border-color: #f0f0f0;
+  --border-color: #E2D9CD;
   
   /* Typography */
-  --font-sans: 'Roboto', Arial, sans-serif;
+  --font-sans: 'Inter', 'Roboto', Arial, sans-serif;
+  --font-heading: 'Playfair Display', 'Georgia', serif;
   
   /* Spacing */
   --spacing-xs: 4px;
@@ -41,9 +43,15 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.4;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 a {
@@ -71,31 +79,32 @@ button {
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
 }
 
-/* Flipkart Buttons */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 20px;
-  border-radius: var(--radius-sm);
-  font-size: 16px;
-  font-weight: 500;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
-  transition: box-shadow 0.2s;
-  color: white;
-  text-transform: uppercase;
+  padding: 14px 24px;
+  border-radius: 30px; /* Pill shaped buttons from screenshot */
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-transform: none; /* No uppercase */
 }
 
 .btn:hover {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .btn-primary {
   background-color: var(--accent-primary);
+  color: var(--text-primary);
 }
 
 .btn-secondary {
   background-color: var(--accent-secondary);
+  color: var(--text-white);
 }
 
 .btn-tryon {

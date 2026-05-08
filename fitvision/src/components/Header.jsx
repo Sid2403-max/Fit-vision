@@ -54,7 +54,7 @@ export default function Header({ onLoginClick, onCartClick, onWishlistClick }) {
           <span className="nav-cat">Mobiles</span>
           <span className="nav-cat">Electronics</span>
           <span className="nav-cat">TVs &amp; Appliances</span>
-          <span className="nav-cat" style={{color: '#2874f0', fontWeight: 'bold'}}>Fashion Try-On ✨</span>
+          <span className="nav-cat" style={{color: 'var(--nav-primary)', fontWeight: 'bold'}}>Fashion Try-On ✨</span>
           <span className="nav-cat">Beauty</span>
           <span className="nav-cat">Home &amp; Kitchen</span>
           <span className="nav-cat">Furniture</span>

@@ -24,7 +24,7 @@ export default function CheckoutModal({ item, onClose }) {
 
         {step === 3 ? (
           <div style={{padding: '50px', textAlign: 'center', background: 'white', minHeight: '400px'}}>
-            <div style={{fontSize: '5rem', color: '#388e3c', marginBottom: '20px'}}>✅</div>
+            <div style={{fontSize: '5rem', color: 'var(--text-green)', marginBottom: '20px'}}>✅</div>
             <h2 style={{color: '#212121', marginBottom: '10px'}}>Order Placed Successfully!</h2>
             <p style={{color: '#878787'}}>Thank you for shopping with FitVision.</p>
             <p style={{marginTop: '10px'}}>Your order will be delivered to the registered address in 3-5 business days.</p>
